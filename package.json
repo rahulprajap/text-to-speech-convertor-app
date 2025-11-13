@@ -1,0 +1,13 @@
+{
+  "name": "voice-generator",
+  "version": "1.0.0",
+  "description": "Voice Generator - Text to Speech Application",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "install:all": "cd frontend && npm install && cd ../api && npm install"
+  },
+  "keywords": ["text-to-speech", "voice", "browser-tts"],
+  "author": "",
+  "license": "ISC",
+}
+
