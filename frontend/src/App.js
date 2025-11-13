@@ -23,6 +23,19 @@ function App() {
 
   useEffect(() => {
     // Initialize speech synthesis
+    const loadVoices = () => {
+      const availableVoices = window.speechSynthesis.getVoices();
+      setVoices(availableVoices);
+      
+      // Set default voice (prefer English voices)
+      if (availableVoices.length > 0 && !selectedVoice) {
+        const defaultVoice = availableVoices.find(voice => 
+          voice.lang.startsWith('en')
+        ) || availableVoices[0];
+        setSelectedVoice(defaultVoice);
+      }
+    };
+
     if ('speechSynthesis' in window) {
       synthRef.current = window.speechSynthesis;
       loadVoices();
@@ -50,20 +63,8 @@ function App() {
         synthRef.current.cancel();
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const loadVoices = () => {
-    const availableVoices = window.speechSynthesis.getVoices();
-    setVoices(availableVoices);
-    
-    // Set default voice (prefer English voices)
-    if (availableVoices.length > 0 && !selectedVoice) {
-      const defaultVoice = availableVoices.find(voice => 
-        voice.lang.startsWith('en')
-      ) || availableVoices[0];
-      setSelectedVoice(defaultVoice);
-    }
-  };
 
   const handlePlay = () => {
     if (!text.trim()) {
@@ -296,12 +297,6 @@ function App() {
     
     // Show message
     alert('Audio download feature requires browser permissions. Please use Chrome or Edge for best results. Alternatively, you can use browser extensions or screen recording software to capture the audio.');
-  };
-
-  const handleVoiceChange = (e) => {
-    const voiceIndex = parseInt(e.target.value);
-    const voice = voices[voiceIndex];
-    setSelectedVoice(voice);
   };
 
   const handleVoiceSelect = (voice) => {
