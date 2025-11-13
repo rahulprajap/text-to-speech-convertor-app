@@ -192,7 +192,6 @@ function App() {
           const audioBlob = new Blob(audioChunksRef.current, { 
             type: MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4' 
           });
-          setAudioBlob(audioBlob);
           
           // Create download link
           const url = URL.createObjectURL(audioBlob);
