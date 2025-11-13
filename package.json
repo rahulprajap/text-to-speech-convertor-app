@@ -1,18 +1,7 @@
 {
   "name": "voice-generator",
   "version": "1.0.0",
-  "description": "Voice Generator - Text to Speech Application",
   "engines": {
-    "node": ">=18.0.0"
-  },
-  "scripts": {
-    "build": "cd frontend && npm install && npm run build"
-  },
-  "keywords": [
-    "text-to-speech",
-    "voice",
-    "browser-tts"
-  ],
-  "author": "",
-  "license": "ISC"
+    "node": "18.x"
+  }
 }
