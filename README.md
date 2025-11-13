@@ -1,6 +1,6 @@
 # 🎤 Voice Generator - Text to Speech Web Application
 
-A modern, responsive web application that converts text to speech using the browser's built-in Web Speech API. Built with React (frontend) and Node.js/Express (backend).
+A modern, responsive web application that converts text to speech using the browser's built-in Web Speech API. Built with React (frontend only - no backend required!).
 
 ## ✨ Features
 
@@ -21,9 +21,7 @@ A modern, responsive web application that converts text to speech using the brow
 - Web Speech API (browser-native)
 
 ### Backend
-- Node.js
-- Express.js
-- CORS enabled for cross-origin requests
+- **None required!** This app runs entirely in the browser using the Web Speech API.
 
 ## 📋 Prerequisites
 
@@ -41,16 +39,7 @@ If you have the project files, navigate to the project directory:
 cd voice-generator
 ```
 
-### 2. Install Backend Dependencies
-
-Navigate to the backend directory and install dependencies:
-
-```bash
-cd backend
-npm install
-```
-
-### 3. Install Frontend Dependencies
+### 2. Install Frontend Dependencies
 
 Open a new terminal, navigate to the frontend directory, and install dependencies:
 
@@ -59,25 +48,9 @@ cd frontend
 npm install
 ```
 
-### 4. Run the Application
+### 3. Run the Application
 
-You'll need to run both the backend and frontend servers.
-
-#### Terminal 1 - Start Backend Server
-
-```bash
-cd backend
-npm start
-```
-
-The backend server will start on `http://localhost:5000`
-
-For development with auto-reload (optional):
-```bash
-npm run dev
-```
-
-#### Terminal 2 - Start Frontend Development Server
+Navigate to the frontend directory and start the development server:
 
 ```bash
 cd frontend
@@ -85,6 +58,8 @@ npm start
 ```
 
 The frontend will automatically open in your browser at `http://localhost:3000`
+
+**Note:** No backend server is needed! The app works entirely in your browser.
 
 ## 📖 Usage
 
@@ -109,9 +84,6 @@ The Web Speech API is supported in:
 
 ```
 voice-generator/
-├── backend/
-│   ├── server.js          # Express server
-│   └── package.json       # Backend dependencies
 ├── frontend/
 │   ├── public/
 │   │   └── index.html     # HTML template
@@ -123,21 +95,22 @@ voice-generator/
 │   ├── package.json       # Frontend dependencies
 │   ├── tailwind.config.js # Tailwind configuration
 │   └── postcss.config.js  # PostCSS configuration
+├── vercel.json            # Vercel deployment configuration
+├── package.json           # Root package.json (for Vercel)
 ├── .gitignore
 └── README.md
 ```
 
 ## 🔧 Configuration
 
-### Backend Port
-The backend server runs on port 5000 by default. You can change this by setting the `PORT` environment variable:
+### Frontend Port
+The React development server runs on port 3000 by default. If port 3000 is in use, it will prompt you to use another port.
+
+You can change the port by setting the `PORT` environment variable:
 
 ```bash
 PORT=3001 npm start
 ```
-
-### Frontend Port
-The React development server runs on port 3000 by default. If port 3000 is in use, it will prompt you to use another port.
 
 ## 🎨 Customization
 

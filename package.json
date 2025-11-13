@@ -1,7 +1,7 @@
 {
   "name": "voice-generator",
   "version": "1.0.0",
-  "description": "Voice Generator - Text to Speech Application",
+  "description": "Voice Generator - Text to Speech Web Application",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -16,3 +16,4 @@
   "author": "",
   "license": "ISC"
 }
+
